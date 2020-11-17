@@ -2,7 +2,7 @@
 
 União entre tabelas do MySQL
 
-Para outros SGBD os comandos sãos emelhantes, com epquenas variações.
+Para outros SGBD os comandos são semelhantes, com pequenas variações.
 
 Para isto usa-se o conhecimento da teoria dos conjuntos, da matemática.
 
