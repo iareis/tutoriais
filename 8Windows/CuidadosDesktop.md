@@ -1,6 +1,9 @@
 # Cuidando bem do Windows
 
-Um computador é uma ferramenta que precisa ser bem cuidada para que sempre funcione bem, que esteja sempre a nossa disposição. Se não cuidarmos ele irá nos deixar na mão em algum momento.
+É importante que seu computador desktop esteja com funcionamento estável, sem desligamentos ou reinicios automáticos, sem virus ou outras ameaças e para isso ele 
+precisa da sua atenção.
+
+Um computador é uma ferramenta que precisa ser bem cuidada para que sempre funcione bem, para que esteja sempre a nossa disposição. Se não cuidarmos ele irá nos deixar na mão em algum momento.
 
 - Vale lembrar que sempre que apareça um problema que você não saiba resolver, saiba que "o Google é seu amigo". Geralmente um problema que acontece com você acontece com muita gente, ainda mais se pesquisar em inglês. Dicas:
 
