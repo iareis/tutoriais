@@ -47,7 +47,7 @@ nomeprograma site oficial
 - Escolher a Função dos Botões de Energia
 - Alterar Configurações não Disponiveis no Momento
 - desmarcar LIGAR a INICIALIZAÇÃO RÁPIDA
-Salvar alterações.
+- Salvar alterações.
 
 Pronto ! O recurso de inicialização rápida está desabilitado. Para habilitá-lo novamente, basta seguir os passos acima novamente e marcar a opção “Ligar inicialização rápida (recomendado)”.
 
