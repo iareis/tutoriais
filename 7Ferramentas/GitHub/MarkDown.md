@@ -26,7 +26,7 @@ Correspondem a <h1>, <h2>, ... <h6> do HTML
 
 ou
 
-![Alt ou título da imagem](DataTables.png)
+![Logo do Laravel](https://www.nuvemsol.com.br/wp-content/uploads/2020/10/qtwqedl51vqx5zkxa65d1.png)
 
 ## Tabelas
 
