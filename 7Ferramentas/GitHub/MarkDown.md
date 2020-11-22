@@ -6,7 +6,7 @@ Markdown Syntax é uma sintaxe usada para padronizar e facilitar formatação de
 
 ## Títulos
 
-Correspondem a <h1>, <h2>, ... <h6> do HTML
+Correspondem aos títulos h1, h2, ... h6 do HTML
 
 # Título
     
