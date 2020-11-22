@@ -105,12 +105,12 @@ Valor | Valor | Valor
 ```html
 ## Títulos
 
-# Título <h1>
-## Título <h2>
-### Título <h3>
-#### Título <h4>
-##### Título <h5>
-###### Título <h6>
+# Título 1
+## Título 2
+### Título 3
+#### Título 4
+##### Título 5
+###### Título 6
 
 ## Imagens
 
