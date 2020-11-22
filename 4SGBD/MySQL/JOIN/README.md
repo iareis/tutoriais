@@ -1,6 +1,8 @@
-# Join - união entre tabelas do MySQL
+# Introdução ao Join com MySQL e com Laravel
 
-Para outros SGBD os comandos sãos emelhantes, com epquenas variações.
+União entre tabelas do MySQL
+
+Para outros SGBD os comandos são semelhantes, com pequenas variações.
 
 Para isto usa-se o conhecimento da teoria dos conjuntos, da matemática.
 
@@ -118,3 +120,192 @@ NULL	João Brito
 NULL	Pedro Brito
 ```
 Nas construções dos joins também podemos usar outros comandos: WHERE, ORDER BY, LIKE, etc.
+
+## Joins usando QueryBuilder no Laravel
+
+Inner Join
+
+Inner Join entre as tabelas users, contacts e orders.
+
+Para criar um inner join usamos o comando join. O primeiro argumento passado para o método join é o nome da tabela com a qual precisamos criar o join.
+Podemos efetuar join com várias tabelas:
+```sql
+$users = DB::table('users')
+            ->join('contacts', 'users.id', '=', 'contacts.user_id')
+            ->join('orders', 'users.id', '=', 'orders.user_id')
+            ->select('users.*', 'contacts.phone', 'orders.price')
+            ->get();
+```
+Left/Right Join
+```sql
+$users = DB::table('users')
+            ->leftJoin('posts', 'users.id', '=', 'posts.user_id')
+            ->get();
+
+$users = DB::table('users')
+            ->rightJoin('posts', 'users.id', '=', 'posts.user_id')
+            ->get();
+```
+Mais detalhes:
+
+https://laravel.com/docs/8.x/queries#joins
+
+## Avançando com Join
+
+Criar as tabelas members e authors
+```sql
+CREATE TABLE members (
+    id INT AUTO_INCREMENT,
+    name VARCHAR(100),
+    PRIMARY KEY (id)
+);
+
+CREATE TABLE authors (
+    id INT AUTO_INCREMENT,
+    name VARCHAR(100),
+    PRIMARY KEY (id)
+);
+
+INSERT INTO members(name) VALUES('John'),('Jane'),('Mary'),('David'),('Amelia');
+
+INSERT INTO authors(name) VALUES('John'),('Mary'),('Amelia'),('Joe');
+
+SELECT * FROM members;
+
+id	name
+1	John
+2	Jane
+3	Mary
+4	David
+5	Amelia
+
+SELECT * FROM authors;
+
+id	name
+1	John
+2	Mary
+3	Amelia
+4	Joe
+```
+Alguns membros são autores e outros não.
+
+## Inner Join
+```sql
+SELECT 
+    m.id, 
+    m.name as member, 
+    a.id, 
+    a.name as author
+FROM
+    members m
+INNER JOIN authors a 
+	ON m.name = a.name
+
+id	member	id	author
+1	John	1	John
+3	Mary	2	Mary
+5	Amelia	3	Amelia
+```
+Como o nome dos campos nas tabelas é o mesmo, name e name, podemos usar USING
+```sql
+SELECT 
+    m.id, 
+    m.name as member, 
+    a.id, 
+    a.name as author
+FROM
+    members m
+INNER JOIN authors a USING (name); 
+```
+## Left Join
+```sql
+SELECT 
+    m.id, 
+    m.name as member, /* alias para name, apelido de member */
+    a.id, 
+    a.name as author /* alias para name, apelido de author */
+FROM
+    members m
+LEFT JOIN authors a USING(name);
+
+id	member	id	    author
+1	John	1	    John
+2	Jane	NULL	NULL
+3	Mary	2	    Mary
+4	David	NULL	NULL
+5	Amelia	3	    Amelia
+```
+Retornando apenas os NULL na tabela de authors:
+```sql
+SELECT 
+    m.id, 
+    m.name as member, /* alias para name, apelido de member */
+    a.id, 
+    a.name as author /* alias para name, apelido de author */
+FROM
+    members m
+LEFT JOIN authors a USING(name)
+WHERE a.id IS NULL;
+
+id	member	id	author
+2	Jane	NULL	NULL
+4	David	NULL	NULL
+```
+## Right Join
+```sql
+SELECT 
+    m.id, 
+    m.name as member, 
+    a.id, 
+    a.name as author
+FROM
+    members m
+RIGHT JOIN authors a on m.name = a.name
+
+id	    member	id	author
+1	    John	1	John
+3	    Mary	2	Mary
+5	    Amelia	3	Amelia
+NULL	NULL	4	Joe
+
+Ou comm USING:
+RIGHT JOIN authors a USING(name);
+```
+## Cross Join
+
+Cross Join cria um produto cartesiano dos dois conjuntos/tabelas. Combina cada registro da tabela A com cada campo da tabela B. Veja que o exemplo abaixo tem 4 registros cujo id é 1, pois a tabela b tem 4 registros. Então fica assim: 1,4 1,3 1,2 e 1,1, depois com o 2 até o último.
+```sql
+SELECT 
+    m.id, 
+    m.name as member, 
+    a.id, 
+    a.name as author
+FROM
+    members m
+CROSS JOIN authors a
+
+id	member	id	author
+1	John	4	Joe
+1	John	3	Amelia
+1	John	2	Mary
+1	John	1	John
+2	Jane	4	Joe
+2	Jane	3	Amelia
+2	Jane	2	Mary
+2	Jane	1	John
+3	Mary	4	Joe
+3	Mary	3	Amelia
+3	Mary	2	Mary
+3	Mary	1	John
+4	David	4	Joe
+4	David	3	Amelia
+4	David	2	Mary
+4	David	1	John
+5	Amelia	4	Joe
+5	Amelia	3	Amelia
+5	Amelia	2	Mary
+5	Amelia	1	John
+```
+Referência:
+https://www.mysqltutorial.org/mysql-join/
+
