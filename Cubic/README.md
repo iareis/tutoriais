@@ -186,9 +186,7 @@ O Cubic permite uma navegação fácil pelas etapas de personalização da ISO e
 
 Veja que não falam no Mint, mas como nosso Mint é oriundo do Ubuntu, o Cubic funciona bem nele e provavelmente funcione também em ouras distros oriundas do Ubuntu.
 
-## Dicas sobre o uso do chroot
-
-[chroot](chroot.md)
+## [Dicas sobre o uso do chroot](chroot.md)
 
 ## Ajudando a traduzir
 
