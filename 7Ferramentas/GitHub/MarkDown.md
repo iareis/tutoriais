@@ -78,7 +78,7 @@ ou
 >Para adicionar mais uma linha à citação, basta teclar Enter para um novo
 >código sinal. Isso gerará um novo parágrafo dentro do *blockquote*.
 >Códigos de **negrito**, _itálico_ e <https://links.com> funcionam aqui.
-```
+
 ## Código fonte
 
 ```javascript
@@ -94,7 +94,7 @@ Esta é uma linha de código em HTML.
 ```
 
 ## Alinhamento
-```html
+
 Alinhado a esquerda | Centralizado | Alinhado a direita
 :--------- | :------: | -------:
 Valor | Valor | Valor
@@ -170,7 +170,7 @@ ou
 >Para adicionar mais uma linha à citação, basta teclar Enter para um novo
 >código sinal. Isso gerará um novo parágrafo dentro do *blockquote*.
 >Códigos de **negrito**, _itálico_ e <https://links.com> funcionam aqui.
-
+```
 ## Código fonte
 
 ```javascript
@@ -186,7 +186,7 @@ Esta é uma linha de código em HTML.
 ```
 
 ## Alinhamento
-
+```html
 Alinhado a esquerda | Centralizado | Alinhado a direita
 :--------- | :------: | -------:
 Valor | Valor | Valor
