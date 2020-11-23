@@ -64,7 +64,7 @@ heroku addons:create cleardb:ignite
 
 Receber a URL do novo banco
 heroku config | grep CLEARDB_DATABASE_URL
-CLEARDB_DATABASE_URL: mysql://bda37eff166954:69445d28@us-cdbr-iron-east-04.cleardb.net/heroku_3c94174e0cc6cd8?reconnect=true
+CLEARDB_DATABASE_URL: mysql://xxxxxxxxxxxxxxxxxxxxxxx?reconnect=true
 
 mysql -u bda37eff166954 -h us-cdbr-iron-east-04.cleardb.net -p heroku_3c94174e0cc6cd8
 
