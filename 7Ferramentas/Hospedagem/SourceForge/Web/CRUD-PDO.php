@@ -35,3 +35,6 @@ try{
 }catch(PDOException $e){
       echo $e->getMessage();
 }
+
+// Veja online aqui
+// https://joomlariba.sourceforge.io/
